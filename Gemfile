@@ -37,6 +37,7 @@ gem 'puma', '~> 2.14.0'
 
 gem 'logstasher', '~> 0.6'
 gem 'iiif-presentation'
+gem 'rmagick'
 
 group :development do
   gem 'dotenv-rails'
@@ -48,6 +49,7 @@ group :development, :production do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :assets do

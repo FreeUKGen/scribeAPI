@@ -33,6 +33,13 @@ API::Application.routes.draw do
   get '/classifications/terms/:workflow_id/:annotation_key',  to: 'classifications#terms'
   post '/classifications',                                    to: 'classifications#create'  
 
+  get '/iiif',                                                to: 'iiif#index',            defaults: { format: 'json' }
+  get '/iiif/collection/:key',                                to: 'iiif#collection',       defaults: { format: 'json' }
+  get '/iiif/manifest/:key',                                  to: 'iiif#manifest',         defaults: { format: 'json' }
+  get '/iiif/annotation/:id',                                 to: 'iiif#facsimile',        defaults: { format: 'json' }
+  get '/iiif/list/:id',                                       to: 'iiif#annotation_list',  defaults: { format: 'json' }
+  get '/iiif/list/:root_id/annotation/:id/:name',             to: 'iiif#transcript',       defaults: { format: 'json' }
+
   resources :groups, only: [:show, :index], :defaults => { :format => 'json' }
 
   namespace :admin do

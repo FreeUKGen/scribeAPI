@@ -63,6 +63,7 @@ GEM
       sprockets (~> 2.2)
     bson (4.1.0)
     builder (3.1.4)
+    byebug (9.0.5)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -203,6 +204,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     puma (2.14.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -232,6 +236,7 @@ GEM
     request_store (1.2.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rmagick (2.15.4)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -329,6 +334,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-zooniverse (~> 0.0.3)
   pry
+  pry-byebug
   puma (~> 2.14.0)
   quiet_assets
   rack-cors
@@ -336,6 +342,7 @@ DEPENDENCIES
   rails (= 4.0.13)
   rails_layout
   react-rails (~> 1.0.0.pre)!
+  rmagick
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.0)
   shoulda-matchers

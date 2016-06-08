@@ -1,4 +1,5 @@
 require 'iiif/presentation'
+require 'iiif_translator'
 
 namespace :project do
 
@@ -7,7 +8,7 @@ namespace :project do
   
   module IiifParams 
     THUMBNAIL_RESOLUTION='100,100'
-    SUBJECT_RESOLUTION='1500,'
+    SUBJECT_RESOLUTION="#{IiifTranslator::SCRIBE_WIDTH},"
     SUBJECT_OFFSET='full'
   end
   
@@ -50,30 +51,32 @@ namespace :project do
     # source_rotated
     row << 0.00
     # width,
-    row << 1000
+    row << canvas_width
     # height,
-    row << 1000
+    row << canvas_height
     # source_x,
     row << 0
     # source_y,
     row << 0
     # source_w,
-    row << 1000
+    row << canvas_width
     # source_h
-    row << 1000
+    row << canvas_height
     
     csv << row
   end
   
-  def transform_work(project_key, archive_id)
+
+
+  def transform_archive_work(project_key, archive_id)
     manifest_url = "https://iiif.archivelab.org/iiif/#{archive_id}/manifest.json"
+    group_key = archive_id.underscore
         
     connection = open(manifest_url)
     manifest_json = connection.read
     service = IIIF::Service.parse(manifest_json)
   
     subjects_dir = Rails.root.join('project', project_key, 'subjects')
-    group_key = archive_id.underscore
     group_file = Rails.root.join subjects_dir, "group_#{group_key}.csv"
     
     
@@ -117,8 +120,9 @@ namespace :project do
 
   desc "Create subject CSV file from Internet Archive identifiers"
   task :subject_from_archive, [:project_key,:archive_id] => :environment do |task, args|
-    transform_work(args[:project_key],args[:archive_id])
+    transform_archive_work(args[:project_key],args[:archive_id])
   end
+
 
 
 
