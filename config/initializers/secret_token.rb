@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+ENV['SECRET_KEY_BASE_TOKEN'] = 'd8eed2cb49f33ef9028df593a6c63a00be30a45c5640ecb9f964d0f7643100f78564400c13f64e6c798fd20d059fbbe902d345ca75886f2beb7e1486270ab97a'
 API::Application.config.secret_key_base = ENV['SECRET_KEY_BASE_TOKEN']
