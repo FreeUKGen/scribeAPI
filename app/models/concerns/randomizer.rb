@@ -1,5 +1,6 @@
 module Randomizer
   extend ActiveSupport::Concern
+ 
 
   module ClassMethods
     # Returns a random selection of docs
@@ -39,9 +40,9 @@ module Randomizer
     end
   end
 
-  def save
-    self.random_no = rand
-    super
+  def random_save
+    self.random_no = rand unless self.random_no
+#    super
   end
 
   def create

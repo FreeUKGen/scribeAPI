@@ -65,6 +65,7 @@ class Subject
   # Classifications that generated this subject:
   has_many :parent_classifications, class_name: 'Classification', inverse_of: :child_subject
 
+  before_create :random_save
   after_create :update_subject_set_stats
   after_create :increment_parents_subject_count_by_one, :if => :parent_subject
 
