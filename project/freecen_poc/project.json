@@ -1,0 +1,46 @@
+{
+  "title": "Online Transcription (PoC)",
+  "short_title": "FreeCEN POC",
+  "summary": "Join us in transcribing 19th-century census records.",
+  "background": "/images/background.jpg",
+  "admin_email": "benwbrum@gmail.com",
+  "logo": "/images/logo.png",
+  "favicon": "/images/favicon.ico",
+  "privacy_policy": "http://www.nypl.org/help/about-nypl/legal-notices/privacy-policy",
+  "terms_map": {
+    "group": "collection",
+    "subject set": "page",
+    "subject": "page",
+    "mark": "region"
+  },
+  "team_emails": [
+  ],
+  "team": [
+  ],
+  "organizations": [
+    {
+      "title": "Free UK Genealogy",
+      "description": "Books, mostly.",
+      "url":"http://nypl.org",
+      "logo": "http://cdn-prod.www.aws.nypl.org/sites/all/themes/nypl_new/images/main-logo.png"
+    }
+  ],
+
+  "analytics": {
+    "google_analytics_client_id": "UA-69673163-1"
+  },
+
+  "forum": {
+    "type": "discourse",
+    "base_url": "http://forum.emigrantcity.nypl.org"
+  },
+
+  "menus": {
+    "main": [
+      {"label": "Intro", "page": "intro"},
+      {"label": "Data", "page": "data"},
+      {"label": "About", "page": "about"}
+    ],
+    "footer": []
+  }
+}

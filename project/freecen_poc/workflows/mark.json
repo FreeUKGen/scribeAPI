@@ -1,0 +1,48 @@
+{
+  "name":"mark",
+  "label":"Mark Workflow",
+  "subject_fetch_limit":"10",
+  "generates_subjects": true,
+  "generates_subjects_for": "transcribe",
+
+  "first_task":"mark_primary",
+
+  "tasks": {
+    "mark_primary": {
+      "tool": "pickOneMarkOne",
+      "instruction": "",
+      "generates_subjects": true,
+      "help": {
+        "file": "mark_primary"
+      },
+      "tool_config" : {
+        "displays_transcribe_button": true,
+        "options": [
+          {"type": "rectangleTool", "label": "No. of Schedule", "color": "red", "generates_subject_type": "em_no_of_schedule", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Address", "color": "red", "generates_subject_type": "em_address", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Inhabited", "color": "red", "generates_subject_type": "em_inhabited", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Uninhabited", "color": "red", "generates_subject_type": "em_uninhabited", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Rooms Occupied", "color": "red", "generates_subject_type": "em_rooms_occupied", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Name and Surname", "color": "red", "generates_subject_type": "em_name_and_surname", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Relation to Head of Family", "color": "red", "generates_subject_type": "em_relation_to_head", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Condition", "color": "red", "generates_subject_type": "em_marital_condition", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Age (male)", "color": "red", "generates_subject_type": "em_age_male", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Age (female)", "color": "red", "generates_subject_type": "em_age_female", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Profession or Occupation", "color": "red", "generates_subject_type": "em_occupation", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Employer", "color": "red", "generates_subject_type": "em_employment_employer", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Employed", "color": "red", "generates_subject_type": "em_employment_employed", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Neither", "color": "red", "generates_subject_type": "em_employment_neither", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Where born", "color": "red", "generates_subject_type": "em_birth_place", "help": {"file": "m_freecen_help"}},
+          {"type": "rectangleTool", "label": "Language Spoken", "color": "red", "generates_subject_type": "em_language", "help": {"file": "m_freecen_help"}}
+        ]
+      },
+      "next_task": null
+    },
+
+    "completion_assessment_task": {
+      "tool_config": {
+        "displays_transcribe_button": false
+      }
+    }
+  }
+}

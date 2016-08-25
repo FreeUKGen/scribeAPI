@@ -1,0 +1,191 @@
+{
+  "name": "transcribe",
+  "label": "Transcribe Workflow",
+  "retire_limit": 3,
+  "generates_subjects": true,
+  "generates_subjects_for": "verify",
+  "generates_subjects_after": 3,
+  "generates_subjects_max": 10,
+  "generates_subjects_method": "collect-unique",
+
+  "tasks": {
+
+
+    "em_no_of_schedule": {
+      "tool": "numberTool",
+      "tool_config": {},
+      "instruction": "Enter the record number",
+      "examples": ["2", "3"],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_no_of_schedule"
+    },
+
+    "em_address": {
+      "tool": "textTool",
+      "instruction": "Enter the street address",
+      "examples": ["Warrenhelig", "2 Antipodes Terrace"],
+      "generates_subject_type": "em_transcribed_address",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_inhabited": {
+      "tool": "textTool",
+      "tool_config": {},
+      "instruction": "Enter X for inhabited",
+      "examples": [],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_inhabited"
+    },
+
+    "em_uninhabited": {
+      "tool": "textTool",
+      "tool_config": {},
+      "instruction": "Enter X for uninhabited",
+      "examples": [],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_uninhabited"
+    },
+
+    "em_rooms_occupied": {
+      "tool": "numberTool",
+      "tool_config": {},
+      "instruction": "Enter the number",
+      "examples": ["287", "289"],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_rooms_occupied"
+    },
+
+    "em_name_and_surname": {
+      "tool": "textTool",
+      "instruction": "Enter the name",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_name_and_surname",
+      "help": {
+        "file": "t_record_mortgager"
+      },
+      "generates_subject_type": "em_name_and_surname"
+    },
+
+
+    "em_relation_to_head": {
+      "tool": "textTool",
+      "instruction": "Enter the person's relationship to the head of household",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_address",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+    "em_marital_condition": {
+      "tool": "textTool",
+      "instruction": "Enter the person's condition as to marriage",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_marital_condition",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_age_male": {
+      "tool": "numberTool",
+      "tool_config": {},
+      "instruction": "Enter the age",
+      "examples": ["287", "289"],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_age_male"
+    },
+
+    "em_age_female": {
+      "tool": "numberTool",
+      "tool_config": {},
+      "instruction": "Enter the age",
+      "examples": ["287", "289"],
+      "help": {
+        "file": "t_record_number"
+      },
+      "generates_subject_type": "em_transcribed_age_female"
+    },
+
+
+
+    "em_occupation": {
+      "tool": "textTool",
+      "instruction": "Enter the profession or occupation",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_occupation",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_employment_employer": {
+      "tool": "textTool",
+      "instruction": "Enter an X if marked",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_employment_employer",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_employment_employed": {
+      "tool": "textTool",
+      "instruction": "Enter an X if marked",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_employment_employed",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_employment_neither": {
+      "tool": "textTool",
+      "instruction": "Enter an X if marked",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_employment_neither",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_birth_place": {
+      "tool": "textTool",
+      "instruction": "Place of birth",
+      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
+      "generates_subject_type": "em_transcribed_birth_place",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    },
+
+
+    "em_language": {
+      "tool": "textTool",
+      "instruction": "Language Spoken",
+      "examples": ["English", "Welsh", "Both"],
+      "generates_subject_type": "em_transcribed_language",
+      "help": {
+        "file": "t_record_mortgager"
+      }
+    }
+  }
+}
